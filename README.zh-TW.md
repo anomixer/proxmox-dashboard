@@ -1,4 +1,4 @@
-# Proxmox VE 儀表板 <sub>v0.1</sub>
+# Proxmox VE 儀表板
 
 一個簡易、現代化且響應式的 Proxmox VE 儀表板，提供直觀的節點、虛擬機器和容器監控介面。
 

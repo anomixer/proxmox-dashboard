@@ -1,4 +1,4 @@
-# Proxmox VE 仪表板 <sub>v0.1</sub>
+# Proxmox VE 仪表板
 
 一个简易、现代化且响应式的 Proxmox VE 仪表板，提供直观的节点、虚拟机和容器监控界面。
 
