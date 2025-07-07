@@ -62,8 +62,8 @@
 1. **获取 Proxmox API Token**
    - 登录 Proxmox VE Web 界面
    - 前往 `Datacenter` → `Permissions` → `API Tokens`
-   - 创建新的 Token（Token ID: token-name，取消勾选"Privilege Separation"，点击 Add）
-   - 请妥善保存 Token Secret（Token ID: root@pam!token-name，点击 Copy Secret Value）
+   - 创建新的 Token（Token ID: token-name，取消勾选“权限分离（Privilege Separation）”，点击“新增（Add）”）
+   - 请妥善保存 Token Secret（Token ID: root@pam!token-name，点击“复制密钥（Copy Secret Value）”）
 
 2. **设置连接信息**
    - 首次打开会自动弹出设置对话框
