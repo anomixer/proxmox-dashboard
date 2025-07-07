@@ -245,7 +245,8 @@ h1 {
   
   #lang-toggle-btn,
   #theme-toggle-btn,
-  .refresh-section {
+  .refresh-section,
+  #settings-btn {
     width: 100%;
     max-width: 180px;
     align-self: center;
