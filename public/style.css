@@ -518,6 +518,7 @@ body.light-theme #dashboard-title-text {
 
 .form-actions button {
   flex: 1;
+  width: 100%;
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
@@ -622,9 +623,5 @@ body.light-theme #dashboard-title-text {
   
   .form-actions {
     flex-direction: column;
-  }
-  
-  .form-actions button {
-    width: 100%;
   }
 }
