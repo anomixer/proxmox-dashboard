@@ -16,6 +16,9 @@ if [ ! -e $pid ]; then
   echo "Another 'node server.js' process killed."
 fi
 
+# Run node server.js under Linux background
+node server.js &
+
 # Start the server under Linux Shell and run in background
 nohup node server.js &
 if [ -e nohup.out ]; then
