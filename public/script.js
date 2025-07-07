@@ -88,7 +88,7 @@ const translations = {
     // 设定相关翻译
     settingsTitle: '设置',
     firstRunTitle: '欢迎使用 Proxmox VE Dashboard',
-    firstRunMessage: '这是您首次使用 Proxmox Dashboard，请先设置您的 Proxmox 服务器连接信息。',
+    firstRunMessage: '这是您首次使用 Proxmox VE Dashboard，请先设置您的 Proxmox VE 服务器连接信息。',
     proxmoxHost: 'Proxmox VE 主机 IP 地址:',
     tokenName: 'Token 名称:',
     tokenValue: 'Token 值:',
@@ -130,8 +130,8 @@ const translations = {
     loading: 'Loading...',
     // Settings related translations
     settingsTitle: 'Settings',
-    firstRunTitle: 'Welcome to Proxmox Dashboard',
-    firstRunMessage: 'This is your first time using Proxmox Dashboard. Please configure your Proxmox server connection information first.',
+    firstRunTitle: 'Welcome to Proxmox VE Dashboard',
+    firstRunMessage: 'This is your first time using Proxmox VE Dashboard. Please configure your Proxmox VE server connection information first.',
     proxmoxHost: 'Proxmox VE Host IP Address:',
     tokenName: 'Token Name:',
     tokenValue: 'Token Value:',
@@ -173,8 +173,8 @@ const translations = {
     loading: '読み込み中...',
     // 設定関連の翻訳
     settingsTitle: '設定',
-    firstRunTitle: 'Proxmox Dashboard へようこそ',
-    firstRunMessage: 'Proxmox Dashboard を初めて使用します。まず、Proxmox サーバーの接続情報を設定してください。',
+    firstRunTitle: 'Proxmox VE Dashboard へようこそ',
+    firstRunMessage: 'Proxmox VE Dashboard を初めて使用します。まず、Proxmox VE サーバーの接続情報を設定してください。',
     proxmoxHost: 'Proxmox VE ホスト IP アドレス:',
     tokenName: 'トークン名:',
     tokenValue: 'トークン値:',
@@ -216,8 +216,8 @@ const translations = {
     loading: '로딩 중...',
     // 설정 관련 번역
     settingsTitle: '설정',
-    firstRunTitle: 'Proxmox Dashboard에 오신 것을 환영합니다',
-    firstRunMessage: 'Proxmox Dashboard를 처음 사용하십니다. 먼저 Proxmox 서버 연결 정보를 설정해 주세요.',
+    firstRunTitle: 'Proxmox VE Dashboard에 오신 것을 환영합니다',
+    firstRunMessage: 'Proxmox VE Dashboard를 처음 사용하십니다. 먼저 Proxmox VE 서버 연결 정보를 설정해 주세요.',
     proxmoxHost: 'Proxmox VE 호스트 IP 주소:',
     tokenName: '토큰 이름:',
     tokenValue: '토큰 값:',
