@@ -86,7 +86,7 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 ### Main Features
 
 #### Node Monitoring
-- Display all Proxmox node status
+- Display all Proxmox VE node status
 - Real-time CPU and memory usage
 - Click node cards to refresh status
 
