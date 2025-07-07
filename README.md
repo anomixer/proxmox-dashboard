@@ -98,7 +98,7 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 
 #### Settings Management
 - Click "⚙️ Settings" button in top right
-- Modify Proxmox connection information
+- Modify Proxmox VE connection information
 - Support connection testing
 
 ### Theme and Language
