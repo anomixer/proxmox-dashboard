@@ -22,7 +22,7 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 
 ### 🖥️ Monitoring Features
 - **Real-time Node Monitoring**: CPU, memory usage, node status
-- **Virtual Machine Management**: VM status, resource usage, real-time updates
+- **Virtual Machine & Container Monitoring**: VM status, resource usage, real-time updates
 - **LXC Container Management**: Container status monitoring and resource statistics
 - **Auto-refresh**: Automatic data updates every 15 seconds
 
@@ -90,7 +90,7 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 - Real-time CPU and memory usage
 - Click node cards to refresh status
 
-#### Virtual Machine Management
+#### Virtual Machine & Container Monitoring
 - Display all VMs and LXC containers
 - Status indicators (running/stopped) - running VMs are displayed first
 - Resource usage statistics
