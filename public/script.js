@@ -102,7 +102,7 @@ const translations = {
     unknownError: '未知错误',
     settingsSaveError: '保存设置时发生错误',
     hostPlaceholder: '例如: 192.168.1.100',
-    tokenNamePlaceholder: '例如: root@pam!mcp-server',
+    tokenNamePlaceholder: '例如: root@pam!token-name',
     tokenValuePlaceholder: '输入您的 API Token'
   },
   en: {
@@ -145,7 +145,7 @@ const translations = {
     unknownError: 'Unknown error',
     settingsSaveError: 'Error occurred while saving settings',
     hostPlaceholder: 'e.g., 192.168.1.100',
-    tokenNamePlaceholder: 'e.g., root@pam!mcp-server',
+    tokenNamePlaceholder: 'e.g., root@pam!token-name',
     tokenValuePlaceholder: 'Enter your API Token'
   },
   ja: {
@@ -188,7 +188,7 @@ const translations = {
     unknownError: '不明なエラー',
     settingsSaveError: '設定保存中にエラーが発生しました',
     hostPlaceholder: '例: 192.168.1.100',
-    tokenNamePlaceholder: '例: root@pam!mcp-server',
+    tokenNamePlaceholder: '例: root@pam!token-name',
     tokenValuePlaceholder: 'API トークンを入力してください'
   },
   ko: {
@@ -231,7 +231,7 @@ const translations = {
     unknownError: '알 수 없는 오류',
     settingsSaveError: '설정 저장 중 오류가 발생했습니다',
     hostPlaceholder: '예: 192.168.1.100',
-    tokenNamePlaceholder: '예: root@pam!mcp-server',
+    tokenNamePlaceholder: '예: root@pam!token-name',
     tokenValuePlaceholder: 'API 토큰을 입력하세요'
   }
 };
