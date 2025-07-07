@@ -45,7 +45,7 @@ const translations = {
     // 設定相關翻譯
     settingsTitle: '設定',
     firstRunTitle: '歡迎使用 Proxmox VE Dashboard',
-    firstRunMessage: '這是您首次使用 Proxmox Dashboard，請先設定您的 Proxmox 伺服器連線資訊。',
+    firstRunMessage: '這是您首次使用 Proxmox VE Dashboard，請先設定您的 Proxmox VE 伺服器連線資訊。',
     proxmoxHost: 'Proxmox 主機 IP 位址:',
     tokenName: 'Token 名稱:',
     tokenValue: 'Token 值:',
