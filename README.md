@@ -71,7 +71,8 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 1. **Get Proxmox API Token**
    - Login to Proxmox VE Web interface
    - Go to `Datacenter` → `Permissions` → `API Tokens`
-   - Create new Token (recommended format: `root@pam!dashboard-token`)
+   - Create new Token (Token ID: dashboard-token , uncheck 'Privilege Separation', click Add)
+   - Save Token Secret to safe place (Token ID: root@pam!dashboard-token, click Copy Secret Value)
 
 2. **Set Connection Information**
    - Settings dialog will automatically pop up on first open

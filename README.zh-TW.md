@@ -104,7 +104,8 @@ MIT License
 1. **取得 Proxmox API Token**
    - 登入 Proxmox VE Web 介面
    - 前往 `Datacenter` → `Permissions` → `API Tokens`
-   - 建立新的 Token（建議格式：`root@pam!dashboard-token`）
+   - 建立新的 Token（Token ID: dashboard-token，取消勾選「Privilege Separation」，點擊 Add）
+   - 請妥善保存 Token Secret（Token ID: root@pam!dashboard-token，點擊 Copy Secret Value）
 
 2. **設定連線資訊**
    - 首次開啟會自動彈出設定對話框
