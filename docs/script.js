@@ -132,7 +132,7 @@ const translations = {
     settingsTitle: 'Settings',
     firstRunTitle: 'Welcome to Proxmox Dashboard',
     firstRunMessage: 'This is your first time using Proxmox Dashboard. Please configure your Proxmox server connection information first.',
-    proxmoxHost: 'Proxmox Host IP Address:',
+    proxmoxHost: 'Proxmox VE Host IP Address:',
     tokenName: 'Token Name:',
     tokenValue: 'Token Value:',
     testConnection: 'Test Connection',
