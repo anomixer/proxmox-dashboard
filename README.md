@@ -1,4 +1,4 @@
-# Proxmox VE Dashboard <sub>v0.1</sub>
+# Proxmox VE Dashboard
 
 An easy, modern and responsive dashboard for Proxmox VE that provides an intuitive interface for monitoring nodes, virtual machines and containers.
 
