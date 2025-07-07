@@ -44,7 +44,7 @@ const translations = {
     loading: '載入中...',
     // 設定相關翻譯
     settingsTitle: '設定',
-    firstRunTitle: '歡迎使用 Proxmox Dashboard',
+    firstRunTitle: '歡迎使用 Proxmox VE Dashboard',
     firstRunMessage: '這是您首次使用 Proxmox Dashboard，請先設定您的 Proxmox 伺服器連線資訊。',
     proxmoxHost: 'Proxmox 主機 IP 位址:',
     tokenName: 'Token 名稱:',
@@ -87,7 +87,7 @@ const translations = {
     loading: '加载中...',
     // 设定相关翻译
     settingsTitle: '设置',
-    firstRunTitle: '欢迎使用 Proxmox Dashboard',
+    firstRunTitle: '欢迎使用 Proxmox VE Dashboard',
     firstRunMessage: '这是您首次使用 Proxmox Dashboard，请先设置您的 Proxmox 服务器连接信息。',
     proxmoxHost: 'Proxmox 主机 IP 地址:',
     tokenName: 'Token 名称:',
