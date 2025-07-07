@@ -11,9 +11,9 @@ const settingsPath = path.join(__dirname, 'settings.json');
 
 // 預設設定
 const defaultSettings = {
-  proxmox_host: '172.16.21.60',
-  proxmox_token_name: 'root@pam!mcp-server',
-  proxmox_token_value: '8bf2098b-bd81-461d-b179-2145d7cfb963'
+  proxmox_host: '192.168.1.100',
+  proxmox_token_name: 'root@pam!token-name',
+  proxmox_token_value: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 };
 
 // 讀取設定檔

@@ -59,7 +59,7 @@ const translations = {
     unknownError: '未知錯誤',
     settingsSaveError: '儲存設定時發生錯誤',
     hostPlaceholder: '例如: 192.168.1.100',
-    tokenNamePlaceholder: '例如: root@pam!mcp-server',
+    tokenNamePlaceholder: '例如: root@pam!token-name',
     tokenValuePlaceholder: '輸入您的 API Token'
   },
   zh_cn: {

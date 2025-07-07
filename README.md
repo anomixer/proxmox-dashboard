@@ -76,7 +76,7 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 2. **Set Connection Information**
    - Settings dialog will automatically pop up on first open
    - Enter Proxmox host IP address (e.g., 192.168.1.100)
-   - Enter Token name (e.g., root@pam!dashboard-token)
+   - Enter Token name (e.g., root@pam!token-name)
    - Enter Token value (your API token secret, e.g., xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
    - Click "Test Connection" to confirm connection
    - Click "Save and Start"
@@ -148,7 +148,7 @@ proxmox-dashboard/
 ```json
 {
   "proxmox_host": "192.168.1.100",
-  "proxmox_token_name": "root@pam!dashboard-token",
+  "proxmox_token_name": "root@pam!token-name",
   "proxmox_token_value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```

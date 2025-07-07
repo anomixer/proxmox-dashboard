@@ -68,7 +68,7 @@
 2. **연결 정보 설정**
    - 첫 실행 시 자동으로 설정 대화상자가 표시됩니다
    - Proxmox 호스트 IP 주소 입력（예：192.168.1.100）
-   - Token 이름 입력（예：root@pam!dashboard-token）
+   - Token 이름 입력（예：root@pam!token-name）
    - Token 값 입력（API Token 비밀키，예：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）
    - 「연결 테스트」클릭하여 연결 확인
    - 「저장하고 시작」클릭
@@ -140,7 +140,7 @@ proxmox-dashboard/
 ```json
 {
   "proxmox_host": "192.168.1.100",
-  "proxmox_token_name": "root@pam!dashboard-token",
+  "proxmox_token_name": "root@pam!token-name",
   "proxmox_token_value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```

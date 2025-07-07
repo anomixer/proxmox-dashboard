@@ -6,6 +6,47 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
+## 🎉 Initial Release
+
+### ✨ Features
+- **Real-time Node Monitoring**: CPU, memory usage, node status
+- **Virtual Machine Management**: VM status, resource usage, real-time updates
+- **LXC Container Management**: Container status monitoring and resource statistics
+- **Auto-refresh**: Automatic data updates every 15 seconds
+- **Responsive Design**: Supports desktop, tablet, mobile and other devices
+- **Dark/Light Theme**: Switchable modern themes
+- **Multi-language Support**: Traditional Chinese, Simplified Chinese, English, Japanese, Korean
+- **Settings Management**: First run setup, connection testing, settings persistence
+
+### 🚀 Quick Start
+1. Clone the repository
+2. Run `npm install`
+3. Run `node server.js`
+4. Open `http://localhost:3000`
+
+### 📸 Screenshots
+- Modern, responsive interface
+- Real-time monitoring dashboard
+- Multi-language support
+
+### 🔧 Technical Stack
+- **Backend**: Node.js, Express.js, Axios
+- **Frontend**: Vanilla JavaScript, CSS3, HTML5
+- **Features**: Responsive design, real-time updates, multi-language support
+
+### 🌍 Languages
+- English (Default)
+- 繁體中文
+- 简体中文
+- 日本語
+- 한국어
+
+### 📄 License
+MIT License
+
+---
+**This App is created with the assistance of [Cursor](https://github.com/cursor/cursor) and [Gemini-CLI](https://github.com/google-gemini/gemini-cli)**
+
 ## 📸 截圖
 
 ![Proxmox Dashboard 截圖](./public/screenshot_zh-TW.png)
@@ -68,7 +109,7 @@
 2. **設定連線資訊**
    - 首次開啟會自動彈出設定對話框
    - 輸入 Proxmox 主機 IP 位址（例如：192.168.1.100）
-   - 輸入 Token 名稱（例如：root@pam!dashboard-token）
+   - 輸入 Token 名稱（例如：root@pam!token-name）
    - 輸入 Token 值（您的 API Token 密鑰，例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）
    - 點擊「測試連線」確認連線正常
    - 點擊「儲存並開始使用」
@@ -140,7 +181,7 @@ proxmox-dashboard/
 ```json
 {
   "proxmox_host": "192.168.1.100",
-  "proxmox_token_name": "root@pam!dashboard-token",
+  "proxmox_token_name": "root@pam!token-name",
   "proxmox_token_value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
@@ -203,4 +244,4 @@ proxmox-dashboard/
 
 ---
 
-**此應用程式由 [Cursor](https://github.com/cursor/cursor) 和 [Gemini-CLI](https://github.com/google-gemini/gemini-cli) 協助創建** 
+**此應用程式由 [Cursor](https://github.com/cursor/cursor) 和 [Gemini-CLI](https://github.com/google-gemini/gemini-cli) 協助創建**

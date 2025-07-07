@@ -68,7 +68,7 @@
 2. **接続情報の設定**
    - 初回起動時に自動的に設定ダイアログが表示されます
    - Proxmox ホスト IP アドレスを入力（例：192.168.1.100）
-   - Token 名を入力（例：root@pam!dashboard-token）
+   - Token 名を入力（例：root@pam!token-name）
    - Token 値を入力（API Token の秘密鍵、例：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）
    - 「接続テスト」をクリックして接続を確認
    - 「保存して開始」をクリック
@@ -140,7 +140,7 @@ proxmox-dashboard/
 ```json
 {
   "proxmox_host": "192.168.1.100",
-  "proxmox_token_name": "root@pam!dashboard-token",
+  "proxmox_token_name": "root@pam!token-name",
   "proxmox_token_value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
