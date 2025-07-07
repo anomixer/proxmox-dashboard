@@ -8,7 +8,7 @@
 
 ## 📸 截圖
 
-![Proxmox Dashboard 截圖](public/screenshot_zh-TW.png)
+![Proxmox Dashboard 截圖](./public/screenshot_zh-TW.png)
 
 ## ✨ 功能特色
 

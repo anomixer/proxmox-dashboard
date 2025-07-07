@@ -8,7 +8,7 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 
 ## 📸 Screenshots
 
-![Proxmox Dashboard Screenshot](public/screenshot.png)
+![Proxmox Dashboard Screenshot](./public/screenshot.png)
 
 ## 🌍 Available Languages / 可用語言 / 可用语言 / 利用可能な言語 / 사용 가능한 언어
 

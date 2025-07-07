@@ -8,7 +8,7 @@
 
 ## 📸 스크린샷
 
-![Proxmox Dashboard 스크린샷](public/screenshot_ko.png)
+![Proxmox Dashboard 스크린샷](./public/screenshot_ko.png)
 
 ## ✨ 기능 특징
 
