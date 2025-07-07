@@ -67,7 +67,7 @@
 
 2. **연결 정보 설정**
    - 첫 실행 시 자동으로 설정 대화상자가 표시됩니다
-   - Proxmox 호스트 IP 주소 입력（예：192.168.1.100）
+   - Proxmox VE 호스트 IP 주소 입력(예: 192.168.1.100)
    - Token 이름 입력（예：root@pam!token-name）
    - Token 값 입력（API Token 비밀키，예：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）
    - 「연결 테스트」클릭하여 연결 확인
@@ -154,7 +154,7 @@ proxmox-dashboard/
 ### 자주 묻는 질문
 
 **Q: Proxmox 서버에 연결할 수 없습니다**
-- Proxmox 호스트 IP 주소가 올바른지 확인
+- Proxmox VE 호스트 IP 주소가 올바른지 확인
 - 방화벽 설정 확인（포트 8006）
 - API Token 권한이 충분한지 확인
 

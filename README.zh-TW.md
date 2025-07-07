@@ -108,7 +108,7 @@ MIT License
 
 2. **設定連線資訊**
    - 首次開啟會自動彈出設定對話框
-   - 輸入 Proxmox 主機 IP 位址（例如：192.168.1.100）
+   - 輸入 Proxmox VE 主機 IP 位址（例如：192.168.1.100）
    - 輸入 Token 名稱（例如：root@pam!token-name）
    - 輸入 Token 值（您的 API Token 密鑰，例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）
    - 點擊「測試連線」確認連線正常

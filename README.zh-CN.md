@@ -67,7 +67,7 @@
 
 2. **设置连接信息**
    - 首次打开会自动弹出设置对话框
-   - 输入 Proxmox 主机 IP 地址（例如：192.168.1.100）
+   - 输入 Proxmox VE 主机 IP 地址（例如：192.168.1.100）
    - 输入 Token 名称（例如：root@pam!token-name）
    - 输入 Token 值（您的 API Token 密钥，例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx）
    - 点击「测试连接」确认连接正常
