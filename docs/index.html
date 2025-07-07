@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proxmox VE 儀表板</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+  <style>
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    .proxmox-logo {
+      height: 1.7rem;
+    }
+
+    #dashboard-title-text {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.1rem;
+      }
+      .proxmox-logo {
+        height: 1.3rem;
+      }
+      #dashboard-title-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><img src="proxmox-full-lockup-color.svg" alt="Proxmox Logo" class="proxmox-logo" id="proxmox-logo-img" /> <span id="dashboard-title-text">VE   Dashboard</span></h1>
+      <div class="header">
+        <button id="lang-toggle-btn" aria-label="切換語言">
+          <span>🇹🇼</span>
+          <span class="lang-label">LANGUAGE</span>
+        </button>
+        <button id="theme-toggle-btn" aria-label="切換深色/淺色主題">
+          <span>🌙</span> 主題
+        </button>
+        <button id="settings-btn" aria-label="設定">
+          <span>⚙️</span> 設定
+        </button>
+        <div class="refresh-section">
+          <button id="refresh-btn" aria-label="重新整理儀表板資料">
+            <span>🔄</span> 重新整理
+          </button>
+          <div id="last-refreshed" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section id="nodes-container" aria-label="Proxmox 節點">
+        <h2>🖥️ 節點</h2>
+      </section>
+      
+      <section id="vms-container" aria-label="虛擬機器">
+        <h2>🖥️ 虛擬機器</h2>
+      </section>
+    </main>
+  </div>
+
+  <!-- 設定對話框 -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>⚙️ 設定</h2>
+        <button id="close-settings" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="settings-form">
+          <div class="form-group">
+            <label for="proxmox-host">Proxmox 主機 IP 位址:</label>
+            <input type="text" id="proxmox-host" name="proxmox_host" required placeholder="例如: 192.168.1.100">
+          </div>
+          <div class="form-group">
+            <label for="proxmox-token-name">Token 名稱:</label>
+            <input type="text" id="proxmox-token-name" name="proxmox_token_name" required placeholder="例如: root@pam!mcp-server">
+          </div>
+          <div class="form-group">
+            <label for="proxmox-token-value">Token 值:</label>
+            <input type="password" id="proxmox-token-value" name="proxmox_token_value" required placeholder="輸入您的 API Token">
+          </div>
+          <div class="form-actions">
+            <button type="button" id="test-connection-btn">🔗 測試連線</button>
+            <button type="submit">💾 儲存設定</button>
+          </div>
+        </form>
+        <div id="connection-result" class="connection-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 首次執行設定對話框 -->
+  <div id="first-run-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🎉 歡迎使用 Proxmox Dashboard</h2>
+      </div>
+      <div class="modal-body">
+        <p>這是您首次使用 Proxmox Dashboard，請先設定您的 Proxmox 伺服器連線資訊。</p>
+        <form id="first-run-form">
+          <div class="form-group">
+            <label for="first-run-host">Proxmox 主機 IP 位址:</label>
+            <input type="text" id="first-run-host" name="proxmox_host" required placeholder="例如: 192.168.1.100">
+          </div>
+          <div class="form-group">
+            <label for="first-run-token-name">Token 名稱:</label>
+            <input type="text" id="first-run-token-name" name="proxmox_token_name" required placeholder="例如: root@pam!mcp-server">
+          </div>
+          <div class="form-group">
+            <label for="first-run-token-value">Token 值:</label>
+            <input type="password" id="first-run-token-value" name="proxmox_token_value" required placeholder="輸入您的 API Token">
+          </div>
+          <div class="form-actions">
+            <button type="button" id="first-run-test-btn">🔗 測試連線</button>
+            <button type="submit">💾 儲存並開始使用</button>
+          </div>
+        </form>
+        <div id="first-run-result" class="connection-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
