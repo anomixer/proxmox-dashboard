@@ -62,8 +62,8 @@
 1. **获取 Proxmox API Token**
    - 登录 Proxmox VE Web 界面
    - 前往 `Datacenter` → `Permissions` → `API Tokens`
-   - 创建新的 Token（Token ID: dashboard-token，取消勾选"Privilege Separation"，点击 Add）
-   - 请妥善保存 Token Secret（Token ID: root@pam!dashboard-token，点击 Copy Secret Value）
+   - 创建新的 Token（Token ID: token-name，取消勾选"Privilege Separation"，点击 Add）
+   - 请妥善保存 Token Secret（Token ID: root@pam!token-name，点击 Copy Secret Value）
 
 2. **设置连接信息**
    - 首次打开会自动弹出设置对话框
@@ -179,28 +179,4 @@ proxmox-dashboard/
 1. Fork 项目
 2. 创建功能分支：`git checkout -b feature/amazing-feature`
 3. 提交变更：`git commit -m 'Add amazing feature'`
-4. 推送分支：`git push origin feature/amazing-feature`
-5. 创建 Pull Request
-
-### 代码风格
-- 使用 2 空格缩进
-- 遵循 ESLint 规则
-- 添加适当的注释
-
-## 📄 授权条款
-
-本项目采用 MIT 授权条款 - 详见 [LICENSE](LICENSE) 文件
-
-## 🙏 致谢
-
-- [Proxmox VE](https://www.proxmox.com/) - 优秀的虚拟化平台
-- [Node.js](https://nodejs.org/) - JavaScript 运行环境
-- [Express.js](https://expressjs.com/) - Web 应用框架
-
----
-
-⭐ 如果这个项目对您有帮助，请给个 Star！
-
----
-
-**此应用程序由 [Cursor](https://github.com/cursor/cursor) 和 [Gemini-CLI](https://github.com/google-gemini/gemini-cli) 协助创建** 
+4. 推送分支：`

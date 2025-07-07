@@ -62,5 +62,5 @@
 1. **Proxmox API Token の取得**
    - Proxmox VE Web インターフェースにログイン
    - `Datacenter` → `Permissions` → `API Tokens`
-   - 新しい Token を作成（Token ID: dashboard-token、「Privilege Separation」のチェックを外し、「Add」をクリック）
-   - Token Secret を安全な場所に保存（Token ID: root@pam!dashboard-token、「Copy Secret Value」をクリック）
+   - 新しい Token を作成（Token ID: token-name、「Privilege Separation」のチェックを外し、「Add」をクリック）
+   - Token Secret を安全な場所に保存（Token ID: root@pam!token-name、「Copy Secret Value」をクリック）
