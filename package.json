@@ -1,0 +1,44 @@
+{
+  "name": "proxmox-dashboard",
+  "version": "1.0.0",
+  "description": "A modern, responsive dashboard for Proxmox VE with real-time monitoring and management capabilities",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "proxmox",
+    "dashboard",
+    "monitoring",
+    "virtualization",
+    "vm",
+    "lxc",
+    "nodejs",
+    "express",
+    "real-time"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/proxmox-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/proxmox-dashboard/issues"
+  },
+  "homepage": "https://github.com/yourusername/proxmox-dashboard#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {},
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ]
+}
