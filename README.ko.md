@@ -41,7 +41,7 @@
 
 1. **프로젝트 클론**
    ```bash
-   git clone https://github.com/yourusername/proxmox-dashboard.git
+   git clone https://github.com/anomixer/proxmox-dashboard.git
    cd proxmox-dashboard
    ```
 

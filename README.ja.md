@@ -41,7 +41,7 @@
 
 1. **プロジェクトのクローン**
    ```bash
-   git clone https://github.com/yourusername/proxmox-dashboard.git
+   git clone https://github.com/anomixer/proxmox-dashboard.git
    cd proxmox-dashboard
    ```
 
@@ -112,95 +112,4 @@
 - **Responsive Design**：レスポンシブレイアウト
 
 ### API エンドポイント
-- `GET /api/status` - ノードと VM 状態の取得
-- `GET /api/settings` - 現在の設定の取得
-- `POST /api/settings` - 設定の更新
-- `POST /api/test-connection` - 接続テスト
-- `GET /api/check-first-run` - 初回実行チェック
-
-## 📁 プロジェクト構造
-
-```
-proxmox-dashboard/
-├── server.js              # メインサーバーファイル
-├── package.json           # プロジェクト設定
-├── settings.json          # 設定ファイル（自動生成）
-├── README.md             # プロジェクト説明
-├── public/               # 静的ファイル
-│   ├── index.html        # メインページ
-│   ├── script.js         # フロントエンドロジック
-│   ├── style.css         # スタイルファイル
-│   └── *.svg            # Proxmox Logo
-└── node_modules/         # 依存パッケージ
-```
-
-## 🔧 設定説明
-
-### 設定ファイル形式 (`settings.json`)
-```json
-{
-  "proxmox_host": "192.168.1.100",
-  "proxmox_token_name": "root@pam!token-name",
-  "proxmox_token_value": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-}
-```
-
-### 環境変数
-現在サポートされている環境変数：
-- `PORT`：サーバーポート番号（デフォルト：3000）
-
-## 🐛 トラブルシューティング
-
-### よくある問題
-
-**Q: Proxmox サーバーに接続できない**
-- Proxmox ホスト IP アドレスが正しいことを確認
-- ファイアウォール設定を確認（ポート 8006）
-- API Token の権限が十分であることを確認
-
-**Q: 設定ダイアログが表示されない**
-- ブラウザのキャッシュをクリア
-- `settings.json` ファイルが存在しないことを確認
-- ブラウザの Console エラーメッセージを確認
-
-**Q: データが更新されない**
-- ネットワーク接続を確認
-- Proxmox API Token が有効であることを確認
-- サーバーの Console エラーメッセージを確認
-
-### デバッグモード
-ブラウザの開発者ツール (F12) を開き、Console タブのエラーメッセージを確認してください。
-
-## 🤝 貢献ガイド
-
-Issue と Pull Request の提出を歓迎します！
-
-### 開発環境設定
-1. プロジェクトを Fork
-2. 機能ブランチを作成：`git checkout -b feature/amazing-feature`
-3. 変更をコミット：`git commit -m 'Add amazing feature'`
-4. ブランチをプッシュ：`git push origin feature/amazing-feature`
-5. Pull Request を作成
-
-### コードスタイル
-- 2 スペースインデントを使用
-- ESLint ルールに従う
-- 適切なコメントを追加
-
-## 📄 ライセンス
-
-このプロジェクトは MIT ライセンスの下で提供されています - 詳細は [LICENSE](LICENSE) ファイルを参照してください
-
-## 🙏 謝辞
-
-- [Proxmox VE](https://www.proxmox.com/) - 優れた仮想化プラットフォーム
-- [Node.js](https://nodejs.org/) - JavaScript 実行環境
-- [Express.js](https://expressjs.com/) - Web アプリケーションフレームワーク
-
----
-
-⭐ このプロジェクトがお役に立てば、Star をお願いします！
-
----
-
-**このアプリは [Cursor](https://github.com/cursor/cursor) と [Gemini-CLI](https://github.com/google-gemini/gemini-cli) の支援により作成されました** 
+- `

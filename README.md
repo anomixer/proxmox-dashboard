@@ -49,7 +49,7 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 
 1. **Clone Project**
    ```bash
-   git clone https://github.com/yourusername/proxmox-dashboard.git
+   git clone https://github.com/anomixer/proxmox-dashboard.git
    cd proxmox-dashboard
    ```
 

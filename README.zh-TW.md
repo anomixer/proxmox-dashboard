@@ -82,7 +82,7 @@ MIT License
 
 1. **克隆專案**
    ```bash
-   git clone https://github.com/yourusername/proxmox-dashboard.git
+   git clone https://github.com/anomixer/proxmox-dashboard.git
    cd proxmox-dashboard
    ```
 
