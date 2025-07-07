@@ -203,4 +203,4 @@ proxmox-dashboard/
 
 ---
 
-**此应用程序由 [Cursor](https://cursor.sh/) 和 [Gemini-CLI](https://github.com/google-gemini/gemini-cli) 协助创建** 
+**此应用程序由 [Cursor](https://github.com/cursor/cursor) 和 [Gemini-CLI](https://github.com/google-gemini/gemini-cli) 协助创建** 

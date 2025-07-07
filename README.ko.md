@@ -203,4 +203,4 @@ Issue 및 Pull Request 제출을 환영합니다！
 
 ---
 
-**이 앱은 [Cursor](https://cursor.sh/)와 [Gemini-CLI](https://github.com/google-gemini/gemini-cli)의 지원으로 제작되었습니다** 
+**이 앱은 [Cursor](https://github.com/cursor/cursor)와 [Gemini-CLI](https://github.com/google-gemini/gemini-cli)의 지원으로 제작되었습니다** 

@@ -211,4 +211,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**This App is created with the assistance of [Cursor](https://cursor.sh/) and [Gemini-CLI](https://github.com/google-gemini/gemini-cli)** 
+**This App is created with the assistance of [Cursor](https://github.com/cursor/cursor) and [Gemini-CLI](https://github.com/google-gemini/gemini-cli)** 
