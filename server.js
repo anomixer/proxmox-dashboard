@@ -70,7 +70,7 @@ app.post('/api/settings', (req, res) => {
   const { proxmox_host, proxmox_token_name, proxmox_token_value } = req.body;
   
   if (!proxmox_host || !proxmox_token_name || !proxmox_token_value) {
-    return res.status(400).json({ error: '所有欄位都是必填的' });
+    return res.status(400).json({ error: 'All fields are required' });
   }
   
   const newSettings = {
@@ -81,9 +81,9 @@ app.post('/api/settings', (req, res) => {
   
   if (saveSettings(newSettings)) {
     settings = newSettings;
-    res.json({ success: true, message: '設定已儲存' });
+    res.json({ success: true, message: 'Settings saved' });
   } else {
-    res.status(500).json({ error: '儲存設定時發生錯誤' });
+    res.status(500).json({ error: 'Error occurred while saving settings' });
   }
 });
 
@@ -92,23 +92,29 @@ app.post('/api/test-connection', async (req, res) => {
   const { proxmox_host, proxmox_token_name, proxmox_token_value } = req.body;
   
   if (!proxmox_host || !proxmox_token_name || !proxmox_token_value) {
-    return res.status(400).json({ error: '所有欄位都是必填的' });
+    return res.status(400).json({ error: 'All fields are required' });
   }
   
+  const testUrl = `https://${proxmox_host}:8006/api2/json/nodes`;
+  console.log('Testing connection to:', testUrl);
   try {
-    const testResponse = await axiosInstance.get(`https://${proxmox_host}:8006/api2/json/nodes`, {
+    const testResponse = await axiosInstance.get(testUrl, {
       headers: {
         'Authorization': `PVEAPIToken=${proxmox_token_name}=${proxmox_token_value}`
       },
       timeout: 10000 // 10 秒超時
     });
     
-    res.json({ success: true, message: '連線成功', data: testResponse.data });
+    res.json({ success: true, message: 'Connection successful', data: testResponse.data });
   } catch (error) {
     console.error('Connection test failed:', error.message);
+    const details = error.response
+      ? `HTTP ${error.response.status} from Proxmox: ${error.response.statusText}`
+      : error.message;
+    console.error('Full error:', error.response?.status, error.response?.data);
     res.status(500).json({ 
-      error: '連線失敗', 
-      details: error.response?.data?.message || error.message 
+      error: `Connection failed — ${testUrl}`,
+      details
     });
   }
 });
@@ -137,8 +143,10 @@ app.get('/api/status', async (req, res) => {
         });
         const nodeStatus = nodeStatusResponse.data.data;
         node.cpu = nodeStatus.cpu !== undefined ? nodeStatus.cpu * 100 : 0; // 轉成百分比
-        node.mem = Number(nodeStatus.memory) || 0;
-        node.maxmem = Number(nodeStatus.maxmem) || 1;
+        node.mem = Number(nodeStatus.memory?.used) || 0;
+        node.maxmem = Number(nodeStatus.memory?.total) || 1;
+        node.disk = Number(nodeStatus.rootfs?.used) || 0;
+        node.maxdisk = Number(nodeStatus.rootfs?.total) || 1;
         node.status = nodeStatus.status || node.status;
         // QEMU VMs
         const vmsResponse = await axiosInstance.get(`https://${settings.proxmox_host}:8006/api2/json/nodes/${node.node}/qemu`, {
@@ -166,6 +174,8 @@ app.get('/api/status', async (req, res) => {
         node.cpu = 0;
         node.mem = 0;
         node.maxmem = 1;
+        node.disk = 0;
+        node.maxdisk = 1;
       }
     }
 
@@ -182,7 +192,9 @@ app.get('/api/status', async (req, res) => {
       status: 'offline',
       cpu: 0,
       mem: 0,
-      maxmem: 1
+      maxmem: 1,
+      disk: 0,
+      maxdisk: 1
     }));
     res.status(200).json({
       nodes: offlineNodes,
@@ -236,6 +248,38 @@ app.get('/api/node-status', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch node status' });
   }
+});
+
+// 啟動 VM
+app.post('/api/vm/start', async (req, res) => {
+  const { node, vmid } = req.body;
+  try {
+    await axiosInstance.post(`https://${settings.proxmox_host}:8006/api2/json/nodes/${node}/qemu/${vmid}/status/start`, {}, {
+      headers: { 'Authorization': `PVEAPIToken=${settings.proxmox_token_name}=${settings.proxmox_token_value}` }
+    });
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to start VM', details: error.message });
+  }
+});
+
+// 啟動 LXC
+app.post('/api/lxc/start', async (req, res) => {
+  const { node, vmid } = req.body;
+  try {
+    await axiosInstance.post(`https://${settings.proxmox_host}:8006/api2/json/nodes/${node}/lxc/${vmid}/status/start`, {}, {
+      headers: { 'Authorization': `PVEAPIToken=${settings.proxmox_token_name}=${settings.proxmox_token_value}` }
+    });
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to start LXC', details: error.message });
+  }
+});
+
+// Global error handler — ensure all API errors return JSON, never HTML
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: err.message || 'Internal server error' });
 });
 
 app.listen(port, () => {

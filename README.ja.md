@@ -1,6 +1,6 @@
 # Proxmox VE ダッシュボード
 
-シンプルでモダンなレスポンシブ Proxmox VE ダッシュボード。ノード、仮想マシン、コンテナの監視インターフェースを直感的に提供します。
+シンプルでモダンなレスポンシブ Proxmox VE ダッシュボード — ノード、VM、コンテナの監視、ワンクリック起動・停止、noVNC コンソールにアクセス。
 
 [![Proxmox Dashboard](https://img.shields.io/badge/Proxmox-VE%20Dashboard-blue?style=for-the-badge&logo=proxmox)](README.md)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js)](README.md)
@@ -22,14 +22,19 @@
 
 ### 🖥️ 監視機能
 - **リアルタイムノード監視**：CPU、メモリ使用率、ノード状態
+- **ノード Shell コンソール**：オンラインノードをクリックして Shell コンソールを開く
+- **ディスク使用率**：ノードカードに CPU、メモリと並んでディスク使用率を表示
 - **仮想マシン・コンテナ監視**：VM/LXC 状態、リソース使用状況、リアルタイム更新
 - **自動更新**：15秒ごとにデータ自動更新
+- **ワンクリック起動**：停止中の VM/LXC をクリックして起動
+- **noVNC コンソール**：稼働中の VM/LXC をクリックで新タブにコンソール表示
 
 ### 🎨 ユーザーインターフェース
 - **レスポンシブデザイン**：デスクトップ、タブレット、スマートフォンなど様々なデバイス対応
 - **ダーク/ライトテーマ**：切り替え可能なモダンテーマ
 - **多言語サポート**：繁体字中国語、簡体字中国語、英語、日本語、韓国語
-- **直感的な操作**：カードをクリックして個別項目の状態を更新
+- **直感的な操作**：稼働中の VM/LXC をクリックで noVNC コンソールを開く；停止中をクリックで起動
+- **稼働/停止カウント**：セクションヘッダーにノードと VM のオンライン/オフライン数を表示
 
 ### ⚙️ 設定管理
 - **初回実行時設定**：自動的に設定ダイアログを表示
@@ -94,7 +99,8 @@
 - すべての VM および LXC コンテナを表示
 - 状態インジケーター（稼働中/停止中）- 稼働中が優先表示
 - リソース使用統計
-- カードをクリックして個別項目を更新
+- 停止中の VM/LXC をクリックで起動（確認あり）
+- 稼働中の VM/LXC をクリックで noVNC コンソールを開く
 
 #### 設定管理
 - 右上の「⚙️ 設定」ボタンをクリック
@@ -125,6 +131,8 @@
 - `POST /api/settings` - 設定更新
 - `POST /api/test-connection` - 接続テスト
 - `GET /api/check-first-run` - 初回実行確認
+- `POST /api/vm/start` - VM を起動
+- `POST /api/lxc/start` - LXC コンテナを起動
 
 ## 📁 プロジェクト構成
 
@@ -157,11 +165,36 @@ proxmox-dashboard/
 現在サポートされている環境変数：
 - `PORT`：サーバーポート番号（デフォルト：3000）
 
+## ☁️ Cloudflare Tunnel へのデプロイ（リモートアクセス）
+
+Proxmox ホストのポートを公開せずにリモートからダッシュボードにアクセスするには、Cloudflare Tunnel を使用します：
+
+1. **Proxmox ホストに cloudflared をインストールして起動**：
+   ```bash
+   # ダッシュボードを起動
+   node server.js &
+   
+   # Cloudflare Tunnel を実行（cloudflared のインストールが必要）
+   cloudflared tunnel --url http://localhost:3000
+   ```
+
+2. **永続的な設定**（推奨）：
+   ```bash
+   cloudflared tunnel create proxmox-dash
+   cloudflared tunnel route dns proxmox-dash dash.yourdomain.com
+   cloudflared tunnel run --url http://localhost:3000 proxmox-dash
+   ```
+
+3. `https://dash.yourdomain.com` を開く — HTTPS は自動的に有効になり、ポート転送は不要です。
+
+> ⚠️ **Demo Only! — GitHub Pages / 静的ホスティング**：GitHub Pages 版（`https://anomixer.github.io/proxmox-dashboard/`）は**静的ページのみ**です — バックエンドサーバーがないため API 呼び出しは失敗します。完全な機能を使用するには、ローカルで `node server.js` を実行してください（Cloudflare Tunnel と併用可能）。
+
 ## 🐛 トラブルシューティング
 
 ### よくある質問
 
 **Q: Proxmox サーバーに接続できない**
+- **GitHub Pages 版はデモ専用です** — `https://anomixer.github.io/proxmox-dashboard/` にはバックエンド API がありません。ローカルで `node server.js` を実行してください（Cloudflare Tunnel と併用可能）。
 - Proxmox ホストの IP アドレスが正しいか確認
 - ファイアウォール設定を確認（ポート 8006）
 - API トークンの権限が十分か確認

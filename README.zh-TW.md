@@ -1,6 +1,6 @@
 # Proxmox VE 儀表板
 
-一個簡易、現代化且響應式的 Proxmox VE 儀表板，提供直觀的節點、虛擬機器和容器監控介面。
+一個簡易、現代化且響應式的 Proxmox VE 儀表板 — 監控節點、VM 與容器，一鍵開關機與開啟 noVNC 主控台。
 
 [![Proxmox Dashboard](https://img.shields.io/badge/Proxmox-VE%20Dashboard-blue?style=for-the-badge&logo=proxmox)](README.md)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js)](README.md)
@@ -22,14 +22,19 @@
 
 ### 🖥️ 監控功能
 - **即時節點監控**：CPU、記憶體使用率、節點狀態
+- **節點 Shell 主控台**：點擊在線的節點可開啟 Shell 主控台
+- **硬碟使用率**：節點卡片顯示硬碟使用率與 CPU、記憶體並列
 - **虛擬機器與容器監控**：VM/LXC 狀態、資源使用、即時更新
 - **自動刷新**：每 15 秒自動更新資料
+- **一鍵開機**：點擊已關機的 VM/LXC 即可啟動
+- **noVNC 主控台**：點擊執行中的 VM/LXC 在新分頁開啟主控台
 
 ### 🎨 使用者介面
 - **響應式設計**：支援桌面、平板、手機等各種裝置
 - **深色/淺色主題**：可切換的現代化主題
 - **多語言支援**：繁體中文、簡體中文、英文、日文、韓文
-- **直觀操作**：點擊卡片即可刷新個別項目狀態
+- **直觀操作**：點擊執行中的 VM/LXC 卡片開啟 noVNC 主控台；點擊已關機的 VM/LXC 可開機
+- **開關機計數**：區段標題顯示節點和 VM 的開機/關機數量
 
 ### ⚙️ 設定管理
 - **首次執行設定**：自動彈出設定對話框
@@ -94,7 +99,8 @@
 - 顯示所有 VM 和 LXC 容器
 - 狀態指示（執行中/已停止）- 執行中的會優先顯示
 - 資源使用統計
-- 點擊卡片可刷新個別項目
+- 點擊已關機的 VM/LXC 可開機（需確認）
+- 點擊執行中的 VM/LXC 可開啟 noVNC 主控台
 
 #### 設定管理
 - 點擊右上角「⚙️ 設定」按鈕
@@ -125,6 +131,8 @@
 - `POST /api/settings` - 更新設定
 - `POST /api/test-connection` - 測試連線
 - `GET /api/check-first-run` - 檢查是否首次執行
+- `POST /api/vm/start` - 啟動 VM
+- `POST /api/lxc/start` - 啟動 LXC 容器
 
 ## 📁 專案結構
 
@@ -157,11 +165,36 @@ proxmox-dashboard/
 目前支援的環境變數：
 - `PORT`：伺服器埠號（預設：3000）
 
+## ☁️ 部署至 Cloudflare Tunnel（遠端存取）
+
+如需從外部網路存取儀表板，而無需開放 Proxmox 主機埠號，請使用 Cloudflare Tunnel：
+
+1. **在 Proxmox 主機上安裝 cloudflared 並啟動**：
+   ```bash
+   # 先啟動儀表板
+   node server.js &
+   
+   # 執行 Cloudflare Tunnel（需先安裝 cloudflared）
+   cloudflared tunnel --url http://localhost:3000
+   ```
+
+2. **永久設定**（建議）：
+   ```bash
+   cloudflared tunnel create proxmox-dash
+   cloudflared tunnel route dns proxmox-dash dash.yourdomain.com
+   cloudflared tunnel run --url http://localhost:3000 proxmox-dash
+   ```
+
+3. 開啟 `https://dash.yourdomain.com` — HTTPS 自動生效，無需設定轉埠。
+
+> ⚠️ **Demo Only! — GitHub Pages / 靜態託管**：GitHub Pages 版本（`https://anomixer.github.io/proxmox-dashboard/`）為**純靜態頁面** — API 請求會失敗，因為無後端伺服器。你必須在本機執行 `node server.js`（可搭配 Cloudflare Tunnel）才能使用完整功能。
+
 ## 🐛 故障排除
 
 ### 常見問題
 
 **Q: 無法連接到 Proxmox 伺服器**
+- **GitHub Pages 版本僅為示範用** — `https://anomixer.github.io/proxmox-dashboard/` 無後端 API，請在本機執行 `node server.js`（或搭配 Cloudflare Tunnel）才能正常使用。
 - 確認 Proxmox 主機 IP 位址正確
 - 檢查防火牆設定（埠號 8006）
 - 確認 API Token 權限足夠

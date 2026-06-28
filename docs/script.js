@@ -36,6 +36,7 @@ const translations = {
     memory: '記憶體',
     cpuUsage: 'CPU 使用率',
     memoryUsage: '記憶體使用率',
+    diskUsage: '硬碟使用率',
     lastRefreshed: '最後更新',
     connectionError: '連線錯誤',
     noDataAvailable: '無可用資料',
@@ -60,7 +61,18 @@ const translations = {
     settingsSaveError: '儲存設定時發生錯誤',
     hostPlaceholder: '例如: 192.168.1.100',
     tokenNamePlaceholder: '例如: root@pam!token-name',
-    tokenValuePlaceholder: '輸入您的 API Token'
+    tokenValuePlaceholder: '輸入您的 API Token',
+    langButtonLabel: '切換語言',
+    themeButtonLabel: '切換深色/淺色主題',
+    settingsButtonLabel: '設定',
+    refreshButtonLabel: '重新整理儀表板資料',
+    nodesSectionLabel: 'Proxmox 節點',
+    vmsSectionLabel: '虛擬機器',
+    staticModeWarning: '⚠️ Demo Only! — API 無法使用，請在本機執行 node server.js',
+    startVm: '啟動虛擬機器',
+    startLxc: '啟動容器',
+    startConfirm: '確定要啟動 %s (%s) 嗎？',
+    openConsole: '開啟主控台'
   },
   zh_cn: {
     title: 'Proxmox VE 仪表板',
@@ -79,6 +91,7 @@ const translations = {
     memory: '内存',
     cpuUsage: 'CPU 使用率',
     memoryUsage: '内存使用率',
+    diskUsage: '硬盘使用率',
     lastRefreshed: '最后更新',
     connectionError: '连接错误',
     noDataAvailable: '无可用数据',
@@ -103,7 +116,18 @@ const translations = {
     settingsSaveError: '保存设置时发生错误',
     hostPlaceholder: '例如: 192.168.1.100',
     tokenNamePlaceholder: '例如: root@pam!token-name',
-    tokenValuePlaceholder: '输入您的 API Token'
+    tokenValuePlaceholder: '输入您的 API Token',
+    langButtonLabel: '切换语言',
+    themeButtonLabel: '切换深色/浅色主题',
+    settingsButtonLabel: '设置',
+    refreshButtonLabel: '刷新仪表板数据',
+    nodesSectionLabel: 'Proxmox 节点',
+    vmsSectionLabel: '虚拟机',
+    staticModeWarning: '⚠️ Demo Only! — API 不可用，请在本地运行 node server.js',
+    startVm: '启动虚拟机',
+    startLxc: '启动容器',
+    startConfirm: '确定要启动 %s (%s) 吗？',
+    openConsole: '打开控制台'
   },
   en: {
     title: 'Proxmox VE Dashboard',
@@ -122,6 +146,7 @@ const translations = {
     memory: 'Memory',
     cpuUsage: 'CPU Usage',
     memoryUsage: 'Memory Usage',
+    diskUsage: 'Disk Usage',
     lastRefreshed: 'Last refreshed',
     connectionError: 'Connection Error',
     noDataAvailable: 'No Data Available',
@@ -146,7 +171,18 @@ const translations = {
     settingsSaveError: 'Error occurred while saving settings',
     hostPlaceholder: 'e.g., 192.168.1.100',
     tokenNamePlaceholder: 'e.g., root@pam!token-name',
-    tokenValuePlaceholder: 'Enter your API Token'
+    tokenValuePlaceholder: 'Enter your API Token',
+    langButtonLabel: 'Switch Language',
+    themeButtonLabel: 'Toggle Dark/Light Theme',
+    settingsButtonLabel: 'Settings',
+    refreshButtonLabel: 'Refresh Dashboard Data',
+    nodesSectionLabel: 'Proxmox Nodes',
+    vmsSectionLabel: 'Virtual Machines',
+    staticModeWarning: '⚠️ Demo Only! — API unavailable, run node server.js locally',
+    startVm: 'Start Virtual Machine',
+    startLxc: 'Start Container',
+    startConfirm: 'Start %s (%s)?',
+    openConsole: 'Open Console'
   },
   ja: {
     title: 'Proxmox VE ダッシュボード',
@@ -165,6 +201,7 @@ const translations = {
     memory: 'メモリ',
     cpuUsage: 'CPU 使用率',
     memoryUsage: 'メモリ使用率',
+    diskUsage: 'ディスク使用率',
     lastRefreshed: '最終更新',
     connectionError: '接続エラー',
     noDataAvailable: 'データなし',
@@ -189,7 +226,18 @@ const translations = {
     settingsSaveError: '設定保存中にエラーが発生しました',
     hostPlaceholder: '例: 192.168.1.100',
     tokenNamePlaceholder: '例: root@pam!token-name',
-    tokenValuePlaceholder: 'API トークンを入力してください'
+    tokenValuePlaceholder: 'API トークンを入力してください',
+    langButtonLabel: '言語を切り替え',
+    themeButtonLabel: 'ダーク/ライトテーマの切り替え',
+    settingsButtonLabel: '設定',
+    refreshButtonLabel: 'ダッシュボードデータを更新',
+    nodesSectionLabel: 'Proxmox ノード',
+    vmsSectionLabel: '仮想マシン',
+    staticModeWarning: '⚠️ Demo Only! — API は利用できません。ローカルで node server.js を実行してください',
+    startVm: '仮想マシンを起動',
+    startLxc: 'コンテナを起動',
+    startConfirm: '%s (%s) を起動しますか？',
+    openConsole: 'コンソールを開く'
   },
   ko: {
     title: 'Proxmox VE 대시보드',
@@ -208,6 +256,7 @@ const translations = {
     memory: '메모리',
     cpuUsage: 'CPU 사용률',
     memoryUsage: '메모리 사용률',
+    diskUsage: '디스크 사용률',
     lastRefreshed: '마지막 업데이트',
     connectionError: '연결 오류',
     noDataAvailable: '사용 가능한 데이터 없음',
@@ -232,11 +281,25 @@ const translations = {
     settingsSaveError: '설정 저장 중 오류가 발생했습니다',
     hostPlaceholder: '예: 192.168.1.100',
     tokenNamePlaceholder: '예: root@pam!token-name',
-    tokenValuePlaceholder: 'API 토큰을 입력하세요'
+    tokenValuePlaceholder: 'API 토큰을 입력하세요',
+    langButtonLabel: '언어 전환',
+    themeButtonLabel: '다크/라이트 테마 전환',
+    settingsButtonLabel: '설정',
+    refreshButtonLabel: '대시보드 데이터 새로고침',
+    nodesSectionLabel: 'Proxmox 노드',
+    vmsSectionLabel: '가상 머신',
+    staticModeWarning: '⚠️ Demo Only! — API를 사용할 수 없습니다. 로컬에서 node server.js를 실행하세요',
+    startVm: '가상 머신 시작',
+    startLxc: '컨테이너 시작',
+    startConfirm: '%s (%s)을(를) 시작하시겠습니까?',
+    openConsole: '콘솔 열기'
   }
 };
 
 let currentLang = 'zh'; // Default to Chinese
+
+// 偵測是否為純靜態模式（無 API backend，例如 GitHub Pages）
+const isStaticMode = !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1');
 
 // Function to set theme
 function setTheme(theme) {
@@ -311,6 +374,14 @@ function setLanguage(lang) {
   const langLabel = langLabels[lang] || 'LANGUAGE';
   langBtn.innerHTML = `<span>${langIcon}</span><span class="lang-label">${langLabel}</span>`;
   
+  // Update aria-labels
+  langBtn.setAttribute('aria-label', translations[lang].langButtonLabel);
+  document.getElementById('theme-toggle-btn').setAttribute('aria-label', translations[lang].themeButtonLabel);
+  document.getElementById('settings-btn').setAttribute('aria-label', translations[lang].settingsButtonLabel);
+  document.getElementById('refresh-btn').setAttribute('aria-label', translations[lang].refreshButtonLabel);
+  document.getElementById('nodes-container').setAttribute('aria-label', translations[lang].nodesSectionLabel);
+  document.getElementById('vms-container').setAttribute('aria-label', translations[lang].vmsSectionLabel);
+  
   // Show loading state
   nodesContainer.innerHTML = `<h2>🖥️ ${translations[lang].nodes}</h2><div class="card loading"><h2>${translations[lang].loading}</h2></div>`;
   vmsContainer.innerHTML = `<h2>🖥️ ${translations[lang].vms}</h2><div class="card loading"><h2>${translations[lang].loading}</h2></div>`;
@@ -378,16 +449,37 @@ async function fetchData() {
       const isOnline = node.status === 'online';
       const cpuValue = isOnline ? Number(node.cpu).toFixed(2) : '0.00';
       const memoryValue = isOnline ? safeDivide(node.mem, node.maxmem) : '0.00';
+      const diskValue = isOnline ? safeDivide(node.disk, node.maxdisk) : '0.00';
       nodeCard.innerHTML = `
         <h2>${node.node}</h2>
         <p>${translations[currentLang].status}: <span class="${isOnline ? 'status-online' : 'status-offline'}">${isOnline ? translations[currentLang].online : translations[currentLang].offline}</span></p>
-        <p>${translations[currentLang].cpu}: ${cpuValue}%</p>
-        <p>${translations[currentLang].memory}: ${memoryValue}%</p>
+        <p>${translations[currentLang].cpuUsage}: ${cpuValue}%</p>
+        <p>${translations[currentLang].memoryUsage}: ${memoryValue}%</p>
+        <p>${translations[currentLang].diskUsage}: ${diskValue}%</p>
       `;
-      // 點擊卡片時只刷新該 node 狀態
+      // 點擊卡片：離線→刷新；在線→開啟主控台
       nodeCard.style.cursor = 'pointer';
       nodeCard.addEventListener('click', async (e) => {
         e.stopPropagation();
+        const t = translations[currentLang];
+
+        if (isOnline) {
+          if (!confirm(`${t.openConsole} — ${node.node}?`)) return;
+          let proxmoxHost = document.getElementById('proxmox-host').value;
+          if (!proxmoxHost) {
+            try {
+              const settingsRes = await fetch('/api/settings');
+              const s = await settingsRes.json();
+              proxmoxHost = s.proxmox_host;
+            } catch (_) {
+              proxmoxHost = '192.168.1.100';
+            }
+          }
+          window.open(`https://${proxmoxHost}:8006/?console=shell&novnc=1&node=${node.node}`, '_blank');
+          return;
+        }
+
+        // 離線狀態：刷新
         nodeCard.classList.add('loading');
         try {
           const res = await fetch(`/api/node-status?node=${encodeURIComponent(node.node)}`);
@@ -403,11 +495,15 @@ async function fetchData() {
           const mem = nodeData.memory && nodeData.memory.total
             ? safeDivide(nodeData.memory.used, nodeData.memory.total)
             : (online ? safeDivide(nodeData.mem, nodeData.maxmem) : '0.00');
+          const disk = nodeData.rootfs && nodeData.rootfs.total
+            ? safeDivide(nodeData.rootfs.used, nodeData.rootfs.total)
+            : (online ? safeDivide(nodeData.disk, nodeData.maxdisk) : '0.00');
           nodeCard.innerHTML = `
             <h2>${node.node}</h2>
-            <p>${translations[currentLang].status}: <span class="${online ? 'status-online' : 'status-offline'}">${online ? translations[currentLang].online : translations[currentLang].offline}</span></p>
-            <p>${translations[currentLang].cpu}: ${cpu}%</p>
-            <p>${translations[currentLang].memory}: ${mem}%</p>
+            <p>${t.status}: <span class="${online ? 'status-online' : 'status-offline'}">${online ? t.online : t.offline}</span></p>
+            <p>${t.cpuUsage}: ${cpu}%</p>
+            <p>${t.memoryUsage}: ${mem}%</p>
+            <p>${t.diskUsage}: ${disk}%</p>
           `;
         } catch (err) {
           if (online) {
@@ -417,9 +513,7 @@ async function fetchData() {
           nodeCard.classList.remove('loading');
         }
       });
-      nodesContainer.appendChild(nodeCard); 
-      // 自動刷新一次（模擬點擊）
-      nodeCard.click();
+      nodesContainer.appendChild(nodeCard);
     });
 
     // Render VMs & LXCs
@@ -450,41 +544,85 @@ async function fetchData() {
         <p>${translations[currentLang].cpuUsage}: ${cpuValue}%</p>
         <p>${translations[currentLang].memoryUsage}: ${memoryValue}%</p>
       `;
-      // 點擊卡片時只刷新該卡片內容
+      // 點擊卡片：關機→詢問開機，開機→開啟主控台
       vmCard.style.cursor = 'pointer';
       vmCard.addEventListener('click', async (e) => {
         e.stopPropagation();
-        vmCard.classList.add('loading');
-        let url = '';
-        if (isLXC) {
-          url = `/api/lxc-status?node=${encodeURIComponent(item.nodeName)}&vmid=${item.vmid}`;
-        } else {
-          url = `/api/vm-status?node=${encodeURIComponent(item.nodeName)}&vmid=${item.vmid}`;
+        const t = translations[currentLang];
+        const vmName = `${item.name} (${item.vmid})`;
+        const labelSuffix = isLXC ? ' [LXC]' : '';
+
+        if (isRunning) {
+          if (!confirm(`${t.openConsole} — ${vmName}?`)) return;
+          const consoleType = isLXC ? 'lxc' : 'kvm';
+          let proxmoxHost = document.getElementById('proxmox-host').value;
+          if (!proxmoxHost) {
+            try {
+              const settingsRes = await fetch('/api/settings');
+              const s = await settingsRes.json();
+              proxmoxHost = s.proxmox_host;
+            } catch (_) {
+              proxmoxHost = '192.168.1.100';
+            }
+          }
+          window.open(`https://${proxmoxHost}:8006/?console=${consoleType}&novnc=1&vmid=${item.vmid}&node=${item.nodeName}`, '_blank');
+          return;
         }
+
+        // 關機狀態：詢問是否開機
+        if (!confirm(t.startConfirm.replace('%s', item.name).replace('%s', item.vmid))) return;
+        vmCard.classList.add('loading');
         try {
-          const res = await fetch(url);
-          if (!res.ok) throw new Error('Network error');
-          const data = await res.json();
-          // 更新卡片內容
-          const running = data.status === 'running' || data.status === 'online';
-          const cpu = running ? Number(data.cpu * 100).toFixed(2) : '0.00';
-          const mem = running ? safeDivide(data.mem, data.maxmem) : '0.00';
-          vmCard.innerHTML = `
-            <h2>${item.name} (${item.vmid})${lxcLabel} @${item.nodeName}</h2>
-            <p>${translations[currentLang].status}: <span class="${running ? 'status-online' : 'status-offline'}">${running ? translations[currentLang].running : translations[currentLang].stopped}</span></p>
-            <p>${translations[currentLang].cpuUsage}: ${cpu}%</p>
-            <p>${translations[currentLang].memoryUsage}: ${mem}%</p>
-          `;
+          const res = await fetch(isLXC ? '/api/lxc/start' : '/api/vm/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ node: item.nodeName, vmid: item.vmid })
+          });
+          if (!res.ok) throw new Error((await res.json()).error || 'Start failed');
+          // 輪詢直到開機完成
+          const pollUrl = isLXC ? `/api/lxc-status?node=${encodeURIComponent(item.nodeName)}&vmid=${item.vmid}` : `/api/vm-status?node=${encodeURIComponent(item.nodeName)}&vmid=${item.vmid}`;
+          for (let i = 0; i < 30; i++) {
+            await new Promise(r => setTimeout(r, 2000));
+            try {
+              const pollRes = await fetch(pollUrl);
+              if (!pollRes.ok) continue;
+              const pollData = await pollRes.json();
+              if (pollData.status === 'running') break;
+            } catch (_) {}
+          }
+          // 刷新卡片
+          const refreshRes = await fetch(pollUrl);
+          if (refreshRes.ok) {
+            const refreshData = await refreshRes.json();
+            const running = refreshData.status === 'running' || refreshData.status === 'online';
+            const cpu = running ? Number(refreshData.cpu * 100).toFixed(2) : '0.00';
+            const mem = running ? safeDivide(refreshData.mem, refreshData.maxmem) : '0.00';
+            vmCard.innerHTML = `
+              <h2>${vmName}${labelSuffix} @${item.nodeName}</h2>
+              <p>${t.status}: <span class="${running ? 'status-online' : 'status-offline'}">${running ? t.running : t.stopped}</span></p>
+              <p>${t.cpuUsage}: ${cpu}%</p>
+              <p>${t.memoryUsage}: ${mem}%</p>
+            `;
+          }
         } catch (err) {
-          vmCard.innerHTML += `<div style='color:red;margin-top:8px;'>Refresh failed</div>`;
+          alert(`${t.startConfirm.replace('%s', item.name).replace('%s', item.vmid)} ${err.message}`);
         } finally {
           vmCard.classList.remove('loading');
         }
       });
       vmsContainer.appendChild(vmCard);
-      // 自動刷新一次（模擬點擊）
-      vmCard.click();
     });
+
+    // Update headers with online/offline counts
+    const nodesOnline = data.nodes.filter(n => n.status === 'online').length;
+    const nodesOffline = data.nodes.filter(n => n.status === 'offline').length;
+    const nodeH2 = nodesContainer.querySelector('h2');
+    if (nodeH2) nodeH2.textContent = `🖥️ ${translations[currentLang].nodes} (on: ${nodesOnline} / off: ${nodesOffline})`;
+
+    const allRunning = [...data.vms, ...data.lxcs].filter(v => v.status === 'running').length;
+    const allStopped = [...data.vms, ...data.lxcs].filter(v => v.status === 'stopped').length;
+    const vmH2 = vmsContainer.querySelector('h2');
+    if (vmH2) vmH2.textContent = `🖥️ ${translations[currentLang].vms} (on: ${allRunning} / off: ${allStopped})`;
 
     // Update last refreshed time
     const now = new Date();
@@ -574,6 +712,21 @@ function showSettingsModal() {
   loadCurrentSettings();
   // 更新對話框文字
   updateSettingsModalText();
+
+  // 靜態模式提示
+  const existing = document.getElementById('static-mode-warning');
+  if (isStaticMode) {
+    if (!existing) {
+      const banner = document.createElement('div');
+      banner.id = 'static-mode-warning';
+      banner.style.cssText = 'background:#ffc107;color:#000;padding:8px 12px;border-radius:6px;margin-bottom:12px;font-size:13px';
+      banner.textContent = translations[currentLang].staticModeWarning;
+      document.querySelector('#settings-modal .modal-body').insertBefore(banner, document.querySelector('#settings-modal .modal-body').firstChild);
+    }
+  } else if (existing) {
+    existing.remove();
+  }
+
   settingsModal.style.display = 'block';
   document.body.style.overflow = 'hidden';
 }
@@ -613,13 +766,19 @@ function updateSettingsModalText() {
       tokenValueLabel.textContent = t.tokenValue;
     }
     
+    // 更新靜態模式警告文字
+    const warningEl = document.getElementById('static-mode-warning');
+    if (warningEl) {
+      warningEl.textContent = t.staticModeWarning;
+    }
+    
     // 更新按鈕文字
     const testBtn = document.getElementById('test-connection-btn');
     if (testBtn) {
       testBtn.textContent = `🔗 ${t.testConnection}`;
     }
     
-    const submitBtn = document.getElementById('settings-form button[type="submit"]');
+    const submitBtn = document.querySelector('#settings-form button[type="submit"]');
     if (submitBtn) {
       submitBtn.textContent = `💾 ${t.saveSettings}`;
     }
@@ -682,7 +841,7 @@ function updateFirstRunModalText() {
       testBtn.textContent = `🔗 ${t.testConnection}`;
     }
     
-    const submitBtn = document.getElementById('first-run-form button[type="submit"]');
+    const submitBtn = document.querySelector('#first-run-form button[type="submit"]');
     if (submitBtn) {
       submitBtn.textContent = `💾 ${t.saveAndStart}`;
     }
@@ -740,9 +899,15 @@ async function testConnection(formData) {
         proxmox_token_value: formData.get('proxmox_token_value')
       })
     });
-    
+
+    const contentType = response.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      const text = await response.text();
+      throw new Error(`Server returned ${response.status} (${text.slice(0, 60)})`);
+    }
+
     const data = await response.json();
-    
+
     if (data.success) {
       resultElement.textContent = '✅ ' + t.connectionSuccess;
       resultElement.className = 'connection-result success';
@@ -775,6 +940,12 @@ async function saveSettings(formData) {
       })
     });
     
+    const contentType = response.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      const text = await response.text();
+      throw new Error(`Server returned ${response.status} (${text.slice(0, 60)})`);
+    }
+
     const data = await response.json();
     
     if (data.success) {

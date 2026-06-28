@@ -1,6 +1,6 @@
 # Proxmox VE Dashboard
 
-An easy, modern and responsive dashboard for Proxmox VE that provides an intuitive interface for monitoring nodes, virtual machines and containers.
+An easy, modern and responsive dashboard for Proxmox VE — monitor nodes, VMs and containers, power on/off, and access noVNC consoles with one click.
 
 [![Proxmox Dashboard](https://img.shields.io/badge/Proxmox-VE%20Dashboard-blue?style=for-the-badge&logo=proxmox)](README.md)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js)](README.md)
@@ -22,15 +22,20 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 
 ### 🖥️ Monitoring Features
 - **Real-time Node Monitoring**: CPU, memory usage, node status
+- **Node Shell Console**: Click an online node to open its shell console in a new tab
+- **Disk Usage**: Node cards display disk usage alongside CPU and memory
 - **Virtual Machine & Container Monitoring**: VM status, resource usage, real-time updates
 - **LXC Container Management**: Container status monitoring and resource statistics
 - **Auto-refresh**: Automatic data updates every 15 seconds
+- **One-click Power On**: Click a stopped VM/LXC to start it directly
+- **noVNC Console**: Click a running VM/LXC to open its console in a new tab
 
 ### 🎨 User Interface
 - **Responsive Design**: Supports desktop, tablet, mobile and other devices
 - **Dark/Light Theme**: Switchable modern themes
 - **Multi-language Support**: Traditional Chinese, Simplified Chinese, English, Japanese, Korean
-- **Intuitive Operation**: Click cards to refresh individual item status
+- **Intuitive Operation**: Click running VM/LXC card to open noVNC console; click stopped VM/LXC to power on
+- **Online/Offline Counts**: Section headers show running/stopped counts for nodes and VMs
 
 ### ⚙️ Settings Management
 - **First Run Setup**: Automatically pops up settings dialog
@@ -95,7 +100,8 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 - Display all VMs and LXC containers
 - Status indicators (running/stopped) - running VMs are displayed first
 - Resource usage statistics
-- Click cards to refresh individual items
+- Click a stopped VM/LXC to power it on (with confirmation)
+- Click a running VM/LXC to open its noVNC console in a new tab
 
 #### Settings Management
 - Click "⚙️ Settings" button in top right
@@ -126,6 +132,8 @@ An easy, modern and responsive dashboard for Proxmox VE that provides an intuiti
 - `POST /api/settings` - Update settings
 - `POST /api/test-connection` - Test connection
 - `GET /api/check-first-run` - Check if first run
+- `POST /api/vm/start` - Start a VM
+- `POST /api/lxc/start` - Start an LXC container
 
 ## 📁 Project Structure
 
@@ -158,11 +166,36 @@ proxmox-dashboard/
 Currently supported environment variables:
 - `PORT`: Server port number (default: 3000)
 
+## ☁️ Deploy to Cloudflare Tunnel (Remote Access)
+
+If you want to access the dashboard remotely without exposing your Proxmox host ports, use Cloudflare Tunnel:
+
+1. **Install cloudflared on your Proxmox host**:
+   ```bash
+   # Start the dashboard first
+   node server.js &
+   
+   # Run Cloudflare Tunnel (requires cloudflared installed)
+   cloudflared tunnel --url http://localhost:3000
+   ```
+
+2. **Persistent setup** (recommended):
+   ```bash
+   cloudflared tunnel create proxmox-dash
+   cloudflared tunnel route dns proxmox-dash dash.yourdomain.com
+   cloudflared tunnel run --url http://localhost:3000 proxmox-dash
+   ```
+
+3. Open `https://dash.yourdomain.com` — HTTPS is automatic, no port forwarding needed.
+
+> ⚠️ **Demo Only! — GitHub Pages / Static Hosting**: The GitHub Pages version (`https://anomixer.github.io/proxmox-dashboard/`) is **static only** — API calls will fail because there's no backend server. You must run `node server.js` locally (optionally behind Cloudflare Tunnel) for full functionality.
+
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
 **Q: Cannot connect to Proxmox server**
+- **GitHub Pages version is demo-only** — the static site at `https://anomixer.github.io/proxmox-dashboard/` has no backend API. You must run `node server.js` locally (or behind Cloudflare Tunnel) for it to work.
 - Confirm Proxmox host IP address is correct
 - Check firewall settings (port 8006)
 - Confirm API Token has sufficient permissions
